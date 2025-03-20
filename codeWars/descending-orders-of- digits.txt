@@ -1,0 +1,10 @@
+function descendingOrder(n){
+  const numStr = n.toString();
+  const digits = numStr.split('');
+  digits.sort(function(a, b) {
+    return b - a; 
+  });
+  const sortedNumStr = digits.join('');
+  const sortedNum = parseInt(sortedNumStr);
+  return sortedNum;
+}

@@ -1,0 +1,16 @@
+function newAvg(arr, newavg) {
+    let n;
+  n = arr.length + 1;
+  let avg = newavg;
+  let last= n * avg;
+  
+  for (i=0; i < n-1; i++){
+    last -= arr[i];
+  }
+  if (last > 0){ 
+    return Math.ceil(last);
+  }
+  else {
+     throw "Expected New Average is too low";
+  }
+}

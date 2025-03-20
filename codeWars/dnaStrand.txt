@@ -1,0 +1,23 @@
+function dnaStrand(dna){
+  let DNA = dna;
+  let newDna = "";
+  for (i=0; i< dna.length; i++){
+    newDna += changeLetters(DNA[i])
+  }
+  
+  return newDna;
+}
+function changeLetters(letter){
+  if (letter == "A"){
+    return "T";
+  }
+  if (letter == "T"){
+    return "A";
+  }
+  if (letter == "G"){
+    return "C";
+  }
+  if (letter == "C"){
+    return "G";
+  }
+}
