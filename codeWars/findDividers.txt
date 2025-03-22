@@ -1,0 +1,24 @@
+if (integer> 1){
+    let arr = [];
+    if (integer % 2 == 0){
+      if (integer == 2){
+        return 2 +" is prime";
+      }
+      arr.push(2);
+      for (let i = 3; i <= integer / 2; i++){
+        if (integer % i == 0){
+          arr.push(i);
+        }
+      }
+      return arr;
+    }
+    for (let i = 3; i < Math.floor(integer/2); i+=2){
+      if (integer % i == 0){
+        arr.push(i);
+      } 
+    }
+    if (arr.length == 0) {
+      return integer + " is prime";
+    }
+    return arr;
+  }
