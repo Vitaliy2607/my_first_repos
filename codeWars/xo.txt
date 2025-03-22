@@ -1,0 +1,11 @@
+function XO(str) {
+  let x = 0;
+  let o = 0;
+  let string = str.toLowerCase();
+  for(let i = 0; i < string.length; i++ ){
+    if(string[i] === "x") x++;
+    if(string[i] === "o") o++;
+  }
+  return x == o;
+}
+console.log(XO("Xoox"));

@@ -1,0 +1,8 @@
+function getMiddle(s) {
+  //Code goes here!
+  let dev = s.length /2;
+  if  (s.length % 2 == 0) return s[dev - 1] + s[dev]  
+  return s[Math.floor(dev)];
+}
+let str = getMiddle("papana");
+console.log(str)
