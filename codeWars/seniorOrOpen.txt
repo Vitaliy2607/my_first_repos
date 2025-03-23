@@ -1,0 +1,11 @@
+function openOrSenior(data){
+  let array = [];
+  for (let i = 0; i < data.length; i++){
+    array.push(whoIs(data[i]));
+  }
+  return array;
+}
+function whoIs(data){
+  if (data[0] >= 55 && data[1] > 7) return "Senior";
+  return "Open";
+}
