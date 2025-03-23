@@ -1,0 +1,14 @@
+function findOdd(A) {
+  while (A. length > 0){
+    let el = A.shift();
+    let counter = 1;
+    for(let i = 0; i < A.length; i++){
+    if (el === A[i]) {
+      counter++
+      A.splice(i,1);
+      i--;
+    };
+  }
+  if (counter % 2 != 0) return el;
+  }
+}
