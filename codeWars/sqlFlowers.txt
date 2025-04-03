@@ -1,0 +1,6 @@
+select flower1, flower2,
+case
+when (flower1 % 2 = 0 and flower2 % 2 = 1) then true 
+when (flower1 % 2 = 1 and flower2 % 2 = 0)  then true
+else false end as res
+from love 
