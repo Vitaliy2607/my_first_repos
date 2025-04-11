@@ -1,0 +1,4 @@
+function rgb(r, g, b) {
+  const str = a => a < 0 ? a = "00": a > 255 ? a = "FF" : a.toString(16).padStart(2,"0").toUpperCase();
+  return str(r) + str(g) + str(b);
+}

@@ -1,0 +1,10 @@
+select distinct actor.actor_id, concat(first_name,' ',last_name) full_name, title as film_title from actor
+join film_actor using(actor_id)
+join film using(film_id)
+join (select max(film_id) as film_id, actor_id from actor
+      join film_actor using(actor_id)
+      join film using(film_id)
+      group by actor_id)query1
+on actor.actor_id = query1.actor_id
+where first_name like 'J%' and film.film_id = query1.film_id
+order by 1 
