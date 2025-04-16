@@ -1,0 +1,13 @@
+var uniqueInOrder=function(iterable){
+  if(iterable.length == 0){return []}
+  let arr = [];
+  let currentEl = iterable[0];
+  for(let i = 0; i<iterable.length; i++){
+    if(currentEl != iterable[i]){
+      arr.push(currentEl);
+      currentEl = iterable[i];
+    }
+  }
+  arr.push(currentEl);
+  return arr;
+}

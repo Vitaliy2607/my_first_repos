@@ -1,0 +1,8 @@
+function generateHashtag (str) {
+    const toUpCase = (arr, newArr) => {arr.forEach(el => newArr.push(el[0].toUpperCase() + el.substring(1)));
+    return newArr;
+  }
+  if (!str.match(/\S+/g)) return false
+  let result = '#' + toUpCase(str.match(/\S+/g),[]).join('');
+  return result.length > 140 ? false: result;
+}
