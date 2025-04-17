@@ -1,0 +1,13 @@
+function titleCase(str) {
+  let a = str.toLowerCase().split(' ');
+  const toUpCase = arr => {
+    let newArr = []
+    arr.forEach(el => newArr.push(el[0].toUpperCase()+el.substring(1)));
+
+    return newArr.join(' ');
+  }
+
+  return toUpCase(a);
+}
+
+titleCase("I'm a little tea pot");
