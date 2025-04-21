@@ -1,0 +1,26 @@
+function gap(g, m, n) {
+    function findPrimes(m,n){
+    let arr = [];
+    for(let i = m; i <= n; i++){
+      if(isPrime(i)) arr.push(i);
+    }
+    return arr;
+  }
+  function isPrime(num){
+    if(num == 2) return true;
+    if(num % 2 == 0) return false;
+    for(let i = 3; i <= Math.floor(Math.sqrt(num)); i+=2){
+      if(num % i == 0) return false;
+    }
+    return true;
+  }
+  function findFirstPair(a,b, arr, g){
+    if (b >= arr.length) return null;
+    const diff = arr[b] - arr[a];
+    if (diff == g) return [arr[a],arr[b]];
+    //if(diff < g) return findFirstPair(a,b+1,arr,g);
+    //if(diff > g) return findFirstPair(a+1,a+2,arr,g);
+    else return findFirstPair(a+1,a+2,arr,g);
+  }
+  return findFirstPair(0,1,findPrimes(m,n),g);
+}

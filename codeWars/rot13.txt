@@ -1,0 +1,22 @@
+function rot13(str) {
+  let newStr = "";
+  const returnAnotherChat = char => {
+    if(char.charCodeAt(0) >= 97 && char.charCodeAt(0) < 110) {
+      return String.fromCharCode(char.charCodeAt(0) + 13)
+    }
+    if(char.charCodeAt(0) >= 110 && char.charCodeAt(0) < 123){
+      return String.fromCharCode(char.charCodeAt(0) - 13)
+    }
+    if(char.charCodeAt(0) >= 65 && char.charCodeAt(0) < 78) {
+      return String.fromCharCode(char.charCodeAt(0) + 13)
+    }
+    if(char.charCodeAt(0) >= 78 && char.charCodeAt(0) < 91) {
+      return String.fromCharCode(char.charCodeAt(0) - 13)
+    }
+    return char;
+  }
+  for(let i = 0; i< str.length; i++){
+    newStr += returnAnotherChat(str[i])
+  }
+  return newStr;
+}
