@@ -1,0 +1,4 @@
+select player_name,games, left(round(hits * 1.0 / at_bats, 3)::text,5) as batting_average 
+from yankees
+where at_bats >= 100
+order by 3 desc

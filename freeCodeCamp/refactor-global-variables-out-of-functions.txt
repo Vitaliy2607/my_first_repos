@@ -1,0 +1,21 @@
+// The global variable
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+// Change code below this line
+function add(a, bookName) {
+
+  
+  return [...a,bookName];
+  
+  // Change code above this line
+}
+
+// Change code below this line
+function remove(a, bookName) {
+  const book_index = a.indexOf(bookName);
+  if (a.length >= 0) {
+    return a.slice(0, book_index).concat(a.slice(book_index + 1));
+
+    // Change code above this line
+    }
+}
