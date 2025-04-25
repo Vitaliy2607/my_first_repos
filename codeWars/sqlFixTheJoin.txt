@@ -1,0 +1,8 @@
+SELECT 
+  job_title,
+  ROUND(SUM(salary) / COUNT(*) ::FLOAT::NUMERIC, 2)::FLOAT as average_salary,
+  COUNT(*) as total_people,
+  ROUND(SUM(salary)::FLOAT::NUMERIC, 2)::FLOAT as total_salary
+  FROM job
+  GROUP BY job_title
+  ORDER BY average_salary desc
