@@ -1,0 +1,10 @@
+function sumAll(arr) {
+  let sortedArr = arr.sort((a,b) => a - b);
+  const recursion = function(firstEl,secondEl){
+     if (firstEl == secondEl) return secondEl;
+     return recursion(firstEl + 1, secondEl) + firstEl;
+  }
+  return recursion(sortedArr[0],sortedArr[1]);
+}
+
+sumAll([1, 4]);
