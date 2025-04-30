@@ -1,0 +1,12 @@
+function convertHTML(str) {
+  let dictionary = {
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&apos;"
+  }
+  return str.replace(/[&<>"`']/g,match => dictionary[match]);
+}
+
+convertHTML("Dolce & Gabbana");
