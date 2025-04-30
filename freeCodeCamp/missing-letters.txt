@@ -1,0 +1,10 @@
+function fearNotLetter(str) {
+  let firstCode = str.charCodeAt(0);
+  for (let i = 0; i<str.length; i++){
+    if(str.charCodeAt(i) != firstCode) return String.fromCharCode(firstCode);
+    firstCode ++;
+  }
+  return undefined;
+}
+
+fearNotLetter("abce");

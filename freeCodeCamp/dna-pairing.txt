@@ -1,0 +1,7 @@
+function pairElement(str) {
+  let pair = {"A":"T", "T":"A", "G":"C", "C":"G"}
+   
+  return str.split('').map(el => [el,pair[el]]);;
+}
+
+pairElement("GCG");

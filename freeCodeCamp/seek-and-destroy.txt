@@ -1,0 +1,10 @@
+function destroyer(arr) {
+  let mas = [];
+  for (let i = 1; i<arguments.length;i++){
+    mas.push(arguments[i])
+  }
+  
+  return arr.filter((el) => mas.indexOf(el) === -1);
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
