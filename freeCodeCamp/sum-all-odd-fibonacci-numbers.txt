@@ -1,0 +1,13 @@
+function sumFibs(num) {
+  let arr = [0,1];
+  let a = 0;
+  function buildFib(arr, num){
+    while(a <= num){
+      a = arr[arr.length - 1] + arr[arr.length - 2];
+      arr.push(a);
+    } 
+    return arr;
+  }
+  
+  return buildFib(arr,num).filter((el) => el % 2 != 0 && el <= num).reduce((acc,el) => acc + el, 0);
+}
