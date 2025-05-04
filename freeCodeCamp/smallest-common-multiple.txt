@@ -1,0 +1,38 @@
+function smallestCommons(arr) {
+  arr.sort((a,b) => a-b);
+  function findDivisors(number){
+    let divisors = [1];
+    let num = number
+    if(number === 1) return divisors
+    for(let i = 2; i <= number; i++){
+      
+      while(num % i === 0){
+        num /= i;
+        divisors.push(i);
+        if (num === 1) return divisors;
+      }
+    }
+    
+  }
+  
+  function findCommons(arr1,arr2){
+    let result = [...arr1];
+
+    for (let i = 0; i < arr2.length; i++){
+      if(arr1.indexOf(arr2[i]) != -1) {
+        arr1.splice(arr1.indexOf(arr2[i]),1);
+      }
+      else result.push(arr2[i]);
+    }
+    result.sort((a,b) => a-b)
+    return result;
+  }
+  let resultArr = findDivisors(arr[0]);
+  let result = arr[0];
+  for (let i = arr[0] + 1; i <= arr[1]; i++ ){
+    resultArr = findCommons(resultArr, findDivisors(i));
+  }
+  return resultArr.reduce((acc,el) => acc * el, 1);
+}
+
+console.log(smallestCommons([1,5]));
